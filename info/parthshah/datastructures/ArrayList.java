@@ -30,10 +30,7 @@ public class ArrayList<T> {
     }
 
     public boolean contains(T element){
-        for(Object arrayElement : array){
-            if(element.equals(arrayElement)) return true;
-        }
-        return false;
+        return getIndexOf(element) >= 0;
     }
 
     public int size(){
@@ -55,8 +52,17 @@ public class ArrayList<T> {
         return data;
     }
 
-    public T[] toArray(){
-        return  (T[])Arrays.copyOf(array, size);
+    public int getIndexOf(T element){
+        for(int i=0; i<size; i++){
+            if(element.equals(array[i])) return i;
+        }
+        return -1;
+    }
+
+    public T[] toArray(T[] arr){
+        if(arr.length < size) throw new ArrayIndexOutOfBoundsException();
+        System.arraycopy(array, 0, arr, 0, size);
+        return arr;
     }
 
     public Iterator<T> iterator(){
