@@ -3,11 +3,25 @@ import info.parthshah.datastructures.LinkedList;
 import info.parthshah.datastructures.ListNode;
 
 import java.util.Iterator;
+import java.util.Scanner;
 
 public class Tester {
     public static void main(String[] args){
-        //ArrayListTester();
-        LinkedListTester();
+        System.out.println("What do you want to test? (type the index and press enter)");
+        System.out.println("1. ArrayList");
+        System.out.println("2. LinkedList");
+        Scanner input = new Scanner( System.in );
+        int index = input.nextInt();
+
+        switch (index){
+            case 1:
+                ArrayListTester();
+                break;
+            case 2:
+                LinkedListTester();
+                break;
+
+        }
     }
 
     private static void ArrayListTester(){
