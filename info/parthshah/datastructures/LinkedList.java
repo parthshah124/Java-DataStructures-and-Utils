@@ -74,13 +74,13 @@ public class LinkedList<T> {
 
     public T getData(int index){
         ListNode resultNode = get(index);
-        return (T)resultNode.data;
+        return (T)resultNode.getData();
     }
 
     public int getIndexOf(T data){
         ListNode node = head;
         for(int i=0; i < size; i++, node = node.next){
-            if(node.data.equals(data)) return i;
+            if(node.getData().equals(data)) return i;
         }
         return -1;
     }
@@ -121,14 +121,14 @@ public class LinkedList<T> {
         }
         size--;
         mods++;
-        return (T) result.data;
+        return (T) result.getData();
     }
 
     public T[] toArray(T[] arr){
         if(arr.length < size) throw new ArrayIndexOutOfBoundsException();
         ListNode node = head;
         for(int i=0; i<size; i++){
-            arr[i] = (T) node.data;
+            arr[i] = (T) node.getData();
             node = node.next;
         }
         return arr;
@@ -152,7 +152,7 @@ public class LinkedList<T> {
         public T next() {
             checkForModifications();
             if(node != null){
-                T result = node.data;
+                T result = node.getData();
                 node = node.next;
                 return result;
             }

@@ -1,18 +1,15 @@
-import info.parthshah.datastructures.ArrayList;
-import info.parthshah.datastructures.LinkedList;
-import info.parthshah.datastructures.ListNode;
-import info.parthshah.datastructures.Stack;
+import info.parthshah.datastructures.*;
 
-import javax.naming.OperationNotSupportedException;
 import java.util.Iterator;
 import java.util.Scanner;
 
 public class Tester {
-    public static void main(String[] args) throws OperationNotSupportedException {
+    public static void main(String[] args) {
         System.out.println("What do you want to test? (type the index and press enter)");
         System.out.println("1. ArrayList");
         System.out.println("2. LinkedList");
         System.out.println("3. Stack");
+        System.out.println("4. Queue");
 
         Scanner input = new Scanner( System.in );
         int index = input.nextInt();
@@ -27,8 +24,11 @@ public class Tester {
             case 3:
                 StackTester();
                 break;
+            case 4:
+                QueueTester();
+                break;
             default:
-                throw new OperationNotSupportedException();
+                throw new UnsupportedOperationException();
         }
     }
 
@@ -136,6 +136,32 @@ public class Tester {
         System.out.println("position of 3: " + myStack.search(3));
         Integer[] arr = new Integer[myStack.size()];
         arr = myStack.toArray(arr);
+        for(int i : arr){
+            System.out.print(i + " ");
+        }
+    }
+
+    private static void QueueTester(){
+        Queue<Integer> myQueue = new Queue<Integer>();
+        System.out.println("is Empty?: " + myQueue.isEmpty());
+        myQueue.enqueue(1);
+        myQueue.enqueue(2);
+        myQueue.enqueue(3);
+        System.out.println("size: " + myQueue.size());
+        System.out.println("dequeuing " + myQueue.dequeue());
+        System.out.println("size: " + myQueue.size());
+        System.out.println("is Empty?: " + myQueue.isEmpty());
+        myQueue.enqueue(4);
+        myQueue.enqueue(5);
+        myQueue.enqueue(6);
+        System.out.println("front element: " + myQueue.peek());
+        System.out.println("contains 3?: " + myQueue.contains(3));
+        System.out.println("size: " + myQueue.size());
+        System.out.println("contains 5?: " + myQueue.contains(5));
+        System.out.println("position of 2: " + myQueue.search(2));
+        System.out.println("position of 3: " + myQueue.search(3));
+        Integer[] arr = new Integer[myQueue.size()];
+        arr = myQueue.toArray(arr);
         for(int i : arr){
             System.out.print(i + " ");
         }

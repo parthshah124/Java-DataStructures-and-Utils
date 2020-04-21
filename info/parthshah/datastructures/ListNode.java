@@ -1,7 +1,7 @@
 package info.parthshah.datastructures;
 
 public class ListNode<T>{
-    T data;
+    private T data;
     ListNode next;
 
     public ListNode(T data){
@@ -11,5 +11,9 @@ public class ListNode<T>{
 
     public T getData(){
         return data;
+    }
+
+    public void setData(T data){
+        this.data = data;
     }
 }
