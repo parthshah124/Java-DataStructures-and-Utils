@@ -63,35 +63,6 @@ public class ArrayList<T> {
         return new Itr();
     }
 
-//    @Override
-//    public Iterator<T> iterator() {
-//        Iterator<T> it = new Iterator<T>() {
-//            int next;
-//            int previous = -1;
-//            int expectedMods = mods; //For fast fail.
-//
-//            @Override
-//            public boolean hasNext() {
-//                checkForModifications();
-//                return next != size;
-//            }
-//
-//            @Override
-//            public T next() {
-//                checkForModifications();
-//                if(next >= size) throw new NoSuchElementException();
-//                previous = next;
-//                next++;
-//                return (T)array[previous];
-//            }
-//
-//            private void checkForModifications(){
-//                if(expectedMods != mods) throw new ConcurrentModificationException();
-//            }
-//        };
-//        return it;
-//    }
-
     public class Itr implements Iterator<T>{
 
         int next;

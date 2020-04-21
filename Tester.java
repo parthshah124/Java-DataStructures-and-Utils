@@ -1,10 +1,13 @@
 import info.parthshah.datastructures.ArrayList;
+import info.parthshah.datastructures.LinkedList;
+import info.parthshah.datastructures.ListNode;
 
 import java.util.Iterator;
 
 public class Tester {
     public static void main(String[] args){
-        ArrayListTester();
+        //ArrayListTester();
+        LinkedListTester();
     }
 
     private static void ArrayListTester(){
@@ -30,6 +33,55 @@ public class Tester {
         System.out.println("Does contain 2: " + myArrayList.contains(2));
 
         Iterator<Integer> i = myArrayList.iterator();
+        while (i.hasNext()){
+            System.out.print(i.next() + " ");
+        }
+    }
+
+    private static void LinkedListTester(){
+        LinkedList<Integer> myLinkedList = new LinkedList<Integer>();
+        myLinkedList.append(new ListNode(1));
+        myLinkedList.append(new ListNode(2));
+        myLinkedList.addInFront(new ListNode(3));
+        myLinkedList.append(new ListNode(4));
+        myLinkedList.addInFront(new ListNode(5));
+        myLinkedList.addAtIndex(9, 5);
+        Integer[] arr = new Integer[myLinkedList.size()];
+        arr = myLinkedList.toArray(arr);
+        for(int i : arr){
+            System.out.print(i + " ");
+        }
+        System.out.println("Head: " + myLinkedList.getHead().getData());
+        System.out.println("Tail: " + myLinkedList.getTail().getData());
+        System.out.println("Size: " + myLinkedList.size());
+        System.out.println("Index of: " + myLinkedList.getIndexOf(11));
+
+        myLinkedList.remove(5);
+        arr = new Integer[myLinkedList.size()];
+        arr = myLinkedList.toArray(arr);
+        for(int i : arr){
+            System.out.print(i + " ");
+        }
+        System.out.println();
+
+        myLinkedList.remove(0);
+        arr = new Integer[myLinkedList.size()];
+        arr = myLinkedList.toArray(arr);
+        for(int i : arr){
+            System.out.print(i + " ");
+        }
+        System.out.println();
+
+        myLinkedList.remove(2);
+        arr = new Integer[myLinkedList.size()];
+        arr = myLinkedList.toArray(arr);
+        for(int i : arr){
+            System.out.print(i + " ");
+        }
+
+        System.out.println();
+        myLinkedList = new LinkedList<Integer>(new Integer[]{1,2,3,4,5});
+        Iterator<Integer> i = myLinkedList.iterator();
         while (i.hasNext()){
             System.out.print(i.next() + " ");
         }
