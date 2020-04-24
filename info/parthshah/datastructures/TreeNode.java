@@ -16,12 +16,19 @@ public class TreeNode<T> {
         return this.data;
     }
 
-    public void addChild(TreeNode node){
-        if(isFull()) throw new IndexOutOfBoundsException();
+    public void addChild(TreeNode node, int index) throws IllegalAccessException {
+        if(index >= childCapacity) throw new IndexOutOfBoundsException();
+        if(this.children[index] != null) throw new IllegalAccessException();
         else {
-            this.children[childCount] = node;
+            this.children[index] = node;
             childCount++;
         }
+    }
+
+    public void setChild(TreeNode node, int index) {
+        if(index >= childCapacity) throw new IndexOutOfBoundsException();
+        if(this.children[index] == null) childCount++;
+        this.children[index] = node;
     }
 
     public TreeNode[] getChildren(){
@@ -30,20 +37,15 @@ public class TreeNode<T> {
     }
 
     public TreeNode getChildAt(int index){
-        if(index >= childCount) throw new IndexOutOfBoundsException();
+        if(index >= childCapacity) throw new IndexOutOfBoundsException();
         else return this.children[index];
     }
 
     public TreeNode removeChild(int index){
-        if(index >= childCount) throw new IndexOutOfBoundsException();
+        if(index >= childCapacity) throw new IndexOutOfBoundsException();
+        if(this.children[index] == null) throw new NullPointerException();
         TreeNode removedNode = this.children[index];
-        if(index == childCount - 1){
-            this.children[index] = null;
-        } else {
-            for(int i = index; i < childCount - 1 && children[i] != null; i++){
-                this.children[i] = this.children[i+1];
-            }
-        }
+        this.children[index] = null;
         childCount--;
         return removedNode;
     }

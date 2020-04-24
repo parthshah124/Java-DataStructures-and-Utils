@@ -20,11 +20,11 @@ public class BinaryTreeNode<T> extends TreeNode<T> {
         return (BinaryTreeNode) this.getChildAt(1);
     }
 
-    public void setLeftChild(BinaryTreeNode node){
-
+    public void setLeftChild(BinaryTreeNode node) {
+        this.setChild(node, 0);
     }
 
     public void setRightChild(BinaryTreeNode node){
-
+        this.setChild(node, 1);
     }
 }
