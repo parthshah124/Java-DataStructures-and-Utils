@@ -16,6 +16,10 @@ public class TreeNode<T> {
         return this.data;
     }
 
+    public void setData(T data){
+        this.data = data;
+    }
+
     public void addChild(TreeNode node, int index) throws IllegalAccessException {
         if(index >= childCapacity) throw new IndexOutOfBoundsException();
         if(this.children[index] != null) throw new IllegalAccessException();
@@ -41,7 +45,7 @@ public class TreeNode<T> {
         else return this.children[index];
     }
 
-    public TreeNode removeChild(int index){
+    public TreeNode removeChild(int index){         // Also removes all it's children
         if(index >= childCapacity) throw new IndexOutOfBoundsException();
         if(this.children[index] == null) throw new NullPointerException();
         TreeNode removedNode = this.children[index];
