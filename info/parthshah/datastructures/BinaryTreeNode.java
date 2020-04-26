@@ -7,16 +7,10 @@ public class BinaryTreeNode<T> extends TreeNode<T> {
     }
 
     public BinaryTreeNode getLeftChild(){
-        if(this.getChildAt(0).getClass() != BinaryTreeNode.class){
-            throw new ClassCastException();
-        }
         return (BinaryTreeNode) this.getChildAt(0);
     }
 
     public BinaryTreeNode getRightChild(){
-        if(this.getChildAt(1).getClass() != BinaryTreeNode.class){
-            throw new ClassCastException();
-        }
         return (BinaryTreeNode) this.getChildAt(1);
     }
 
