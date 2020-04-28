@@ -20,7 +20,7 @@ public class Tester {
 
         //Scanner input = new Scanner( System.in );
         //int index = input.nextInt();
-        int index = 6;
+        int index = 7;
 
         switch (index){
             case 1:
@@ -41,9 +41,9 @@ public class Tester {
             case 6:
                 BinaryTreeTester();
                 break;
-//            case 7:
-//                BSTTester();
-//                break;
+            case 7:
+                BSTTester();
+                break;
 //            case 8:
 //                HashMapTester();
 //                break;
@@ -258,6 +258,52 @@ public class Tester {
         ArrayList<Integer> postOrderList = tree.postOrderTraversal();
         arr = postOrderList.toArray(arr);
         for(Integer i : arr){
+            System.out.print(i + " ");
+        }
+    }
+
+    private static void BSTTester(){
+        BinarySearchTree<Integer> tree = new BinarySearchTree<Integer>(3);
+        tree.add(new BinaryTreeNode<Integer>(1));
+        tree.add(new BinaryTreeNode<Integer>(5));
+        tree.add(new BinaryTreeNode<Integer>(0));
+        tree.add(new BinaryTreeNode<Integer>(4));
+        tree.add(new BinaryTreeNode<Integer>(7));
+        tree.add(new BinaryTreeNode<Integer>(2));
+        tree.add(new BinaryTreeNode<Integer>(3));
+        tree.add(new BinaryTreeNode<Integer>(10));
+        tree.add(new BinaryTreeNode<Integer>(12));
+        tree.add(new BinaryTreeNode<Integer>(5));
+        System.out.println(tree.contains(5));
+        System.out.println(tree.contains(13));
+
+        ArrayList<Integer> inOrderList = tree.inOrderTraversal();
+        Integer[] arr = new Integer[inOrderList.size()];
+        arr = inOrderList.toArray(arr);
+        for(Integer i : arr){
+            System.out.print(i + " ");
+        }
+        System.out.println();
+
+        ArrayList<Integer> preOrderList = tree.preOrderTraversal();
+        arr = preOrderList.toArray(arr);
+        for(Integer i : arr){
+            System.out.print(i + " ");
+        }
+        System.out.println();
+
+        ArrayList<Integer> postOrderList = tree.postOrderTraversal();
+        arr = postOrderList.toArray(arr);
+        for(Integer i : arr){
+            System.out.print(i + " ");
+        }
+
+        tree.delete(3);
+        System.out.println();
+        ArrayList<Integer> newInOrderList = tree.inOrderTraversal();
+        Integer[] newArr = new Integer[newInOrderList.size()];
+        newArr = newInOrderList.toArray(newArr);
+        for(Integer i : newArr){
             System.out.print(i + " ");
         }
     }

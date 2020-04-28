@@ -32,6 +32,7 @@ public class TreeNode<T> {
     public void setChild(TreeNode node, int index) {
         if(index >= childCapacity) throw new IndexOutOfBoundsException();
         if(this.children[index] == null) childCount++;
+        if(node == null) childCount--;
         this.children[index] = node;
     }
 

@@ -14,6 +14,10 @@ public class BinaryTree<T> {
 
     public BinaryTreeNode<T> getRoot() { return root; }
 
+    public void setRoot(BinaryTreeNode<T> node){
+        this.root = node;
+    }
+
     public void updateRootData(T data){
         root.setData(data);
     }
