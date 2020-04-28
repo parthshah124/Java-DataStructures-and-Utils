@@ -16,11 +16,10 @@ public class Tester {
         System.out.println("8. HashMap");
         System.out.println("9. Priority Queue");
         System.out.println("10. Trie");
-        System.out.println("11. Graph");
 
         //Scanner input = new Scanner( System.in );
         //int index = input.nextInt();
-        int index = 7;
+        int index = 8;
 
         switch (index){
             case 1:
@@ -44,18 +43,15 @@ public class Tester {
             case 7:
                 BSTTester();
                 break;
-//            case 8:
-//                HashMapTester();
-//                break;
-//            case 9:
-//                PriorityQueueTester();
-//                break;
-//            case 10:
-//                TrieTester();
-//                break;
-//            case 11:
-//                GraphTester();
-//                break;
+            case 8:
+                HashMapTester();
+                break;
+            case 9:
+                PriorityQueueTester();
+                break;
+            case 10:
+                TrieTester();
+                break;
             default:
                 throw new UnsupportedOperationException();
         }
@@ -306,5 +302,17 @@ public class Tester {
         for(Integer i : newArr){
             System.out.print(i + " ");
         }
+    }
+
+    private static void HashMapTester(){
+
+    }
+
+    private static void PriorityQueueTester(){
+
+    }
+
+    private static void TrieTester(){
+
     }
 }
