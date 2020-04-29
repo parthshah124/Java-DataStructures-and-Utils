@@ -1,5 +1,6 @@
 import info.parthshah.datastructures.*;
 
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -305,7 +306,28 @@ public class Tester {
     }
 
     private static void HashMapTester(){
-
+        HashMap<Integer, String> map = new HashMap<Integer, String>();
+        map.put(1, "One");
+        map.put(2, "Two");
+        map.put(3, "Three");
+        map.put(6, "Six");
+        map.put(16, "Sixteen");
+        map.put(17, "Seventeen");
+        map.put(32, "Thirty two");
+        HashSet<Integer> set = map.keySet();
+        for(Integer i : set){
+            System.out.println(i + " " +  map.get(i));
+        }
+        System.out.println(map.size());
+        map.remove(1);
+        map.remove(16);
+        map.remove(32);
+        System.out.println();
+        set = map.keySet();
+        for(Integer i : set){
+            System.out.println(i + " " +  map.get(i));
+        }
+        System.out.println(map.size());
     }
 
     private static void PriorityQueueTester(){
