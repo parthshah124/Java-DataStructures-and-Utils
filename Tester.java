@@ -20,7 +20,7 @@ public class Tester {
 
         //Scanner input = new Scanner( System.in );
         //int index = input.nextInt();
-        int index = 9;
+        int index = 10;
 
         switch (index){
             case 1:
@@ -374,6 +374,17 @@ public class Tester {
     }
 
     private static void TrieTester(){
-
+        Trie trie = new Trie();
+        trie.insert("car");
+        trie.insert("cat");
+        trie.insert("bat");
+        trie.insert("ball");
+        trie.insert("banana");
+        System.out.println(trie.contains("car"));
+        System.out.println(trie.contains("ca"));
+        System.out.println(trie.contains("cat"));
+        System.out.println(trie.contains("banan"));
+        System.out.println(trie.contains("ball"));
+        System.out.println(trie.contains("banana"));
     }
 }
