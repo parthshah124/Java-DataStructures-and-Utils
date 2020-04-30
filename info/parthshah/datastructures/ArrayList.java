@@ -25,6 +25,11 @@ public class ArrayList<T> {
         mods++;
     }
 
+    public void setElementAt(int index, T element){
+        if(index >= size) throw new IndexOutOfBoundsException();
+        array[index] = element;
+    }
+
     private void increaseCapacity(){
         array = Arrays.copyOf(array, size + INCREMENTS);
     }

@@ -20,7 +20,7 @@ public class Tester {
 
         //Scanner input = new Scanner( System.in );
         //int index = input.nextInt();
-        int index = 8;
+        int index = 9;
 
         switch (index){
             case 1:
@@ -331,7 +331,46 @@ public class Tester {
     }
 
     private static void PriorityQueueTester(){
-
+        PriorityQueue<Integer> queue = new PriorityQueue<>();
+        queue.enqueue(13);
+        queue.enqueue(10);
+        queue.enqueue(16);
+        System.out.println(queue.size());
+        queue.enqueue(15);
+        queue.enqueue(20);
+        queue.enqueue(4);
+        queue.enqueue(7);
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.size());
+        queue.enqueue(1);
+        System.out.println(queue.size());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.size());
+        queue.enqueue(13);
+        queue.enqueue(10);
+        queue.enqueue(16);
+        System.out.println(queue.size());
+        queue.enqueue(15);
+        queue.enqueue(20);
+        queue.enqueue(4);
+        queue.enqueue(7);
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.size());
+        queue.enqueue(1);
+        System.out.println(queue.size());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
     }
 
     private static void TrieTester(){
