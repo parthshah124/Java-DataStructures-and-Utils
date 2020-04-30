@@ -70,6 +70,13 @@ public class ArrayList<T> {
         return arr;
     }
 
+    public void merge(ArrayList<T> arr){
+        if(arr == null) return;
+        for(int i = 0; i<arr.size(); i++){
+            this.add(arr.get(i));
+        }
+    }
+
     public Iterator<T> iterator(){
         return new Itr();
     }

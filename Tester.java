@@ -7,20 +7,19 @@ import java.util.Scanner;
 public class Tester {
     public static void main(String[] args) {
         System.out.println("What do you want to test? (type the index and press enter)");
-        System.out.println("1. ArrayList");
-        System.out.println("2. LinkedList");
-        System.out.println("3. Stack");
-        System.out.println("4. Queue");
-        System.out.println("5. N-ary Tree");
-        System.out.println("6. Binary Tree");
-        System.out.println("7. Binary Search Tree");
-        System.out.println("8. HashMap");
-        System.out.println("9. Priority Queue");
-        System.out.println("10. Trie");
+        System.out.print("1. ArrayList ");
+        System.out.print("2. LinkedList ");
+        System.out.print("3. Stack ");
+        System.out.print("4. Queue ");
+        System.out.print("5. N-aryTree ");
+        System.out.print("6. BinaryTree ");
+        System.out.print("7. BinarySearchTree ");
+        System.out.print("8. HashMap ");
+        System.out.print("9. PriorityQueue ");
+        System.out.print("10. Trie ");
 
-        //Scanner input = new Scanner( System.in );
-        //int index = input.nextInt();
-        int index = 10;
+        Scanner input = new Scanner( System.in );
+        int index = input.nextInt();
 
         switch (index){
             case 1:
@@ -386,5 +385,12 @@ public class Tester {
         System.out.println(trie.contains("banan"));
         System.out.println(trie.contains("ball"));
         System.out.println(trie.contains("banana"));
+
+        ArrayList<String> result = trie.wordsStartingFrom("b");
+        String[] arr = new String[result.size()];
+        arr = result.toArray(arr);
+        for(String i : arr){
+            System.out.print(i + " ");
+        }
     }
 }
