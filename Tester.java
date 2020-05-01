@@ -82,12 +82,16 @@ public class Tester {
         System.out.println("Does contain 1: " + myArrayList.contains(1));
         System.out.println("Does contain 2: " + myArrayList.contains(2));
 
+        for(Integer i : myArrayList){
+            System.out.print(i + " ");
+        }
+        System.out.println();
         Integer[] arr = new Integer[myArrayList.size()];
         arr = myArrayList.toArray(arr);
         for(Integer i : arr){
             System.out.print(i + " ");
         }
-
+        System.out.println();
         Iterator<Integer> i = myArrayList.iterator();
         while (i.hasNext()){
             System.out.print(i.next() + " ");

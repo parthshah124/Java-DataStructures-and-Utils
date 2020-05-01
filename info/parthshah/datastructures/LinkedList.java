@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 // iterator
-public class LinkedList<T> {
+public class LinkedList<T> implements Iterable<T>{
     private ListNode<T> head;
     private ListNode<T> tail;
     private int size;
