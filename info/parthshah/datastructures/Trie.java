@@ -1,9 +1,5 @@
 package info.parthshah.datastructures;
 
-import java.io.InvalidObjectException;
-import java.util.HashSet;
-import java.util.InvalidPropertiesFormatException;
-
 public class Trie {
     private TrieNode root;
 

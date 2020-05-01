@@ -5,7 +5,7 @@ import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class ArrayList<T> {
+public class ArrayList<T> implements Iterable<T> {
     public static final int INITIAL_SIZE = 10;
     public static final int INCREMENTS = 10;
     private int size;

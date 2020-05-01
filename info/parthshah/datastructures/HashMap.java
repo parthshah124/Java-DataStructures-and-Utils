@@ -1,7 +1,6 @@
 package info.parthshah.datastructures;
 
 import javax.management.openmbean.KeyAlreadyExistsException;
-import java.util.HashSet;
 import java.util.Iterator;
 
 public class HashMap<K, V> {

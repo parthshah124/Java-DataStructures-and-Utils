@@ -1,6 +1,5 @@
 import info.parthshah.datastructures.*;
 
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -14,9 +13,10 @@ public class Tester {
         System.out.print("5. N-aryTree ");
         System.out.print("6. BinaryTree ");
         System.out.print("7. BinarySearchTree ");
-        System.out.print("8. HashMap ");
-        System.out.print("9. PriorityQueue ");
-        System.out.print("10. Trie ");
+        System.out.print("8. HashSet ");
+        System.out.print("9. HashMap ");
+        System.out.print("10. PriorityQueue ");
+        System.out.print("11. Trie ");
 
         Scanner input = new Scanner( System.in );
         int index = input.nextInt();
@@ -44,12 +44,15 @@ public class Tester {
                 BSTTester();
                 break;
             case 8:
-                HashMapTester();
+                HashSetTester();
                 break;
             case 9:
-                PriorityQueueTester();
+                HashMapTester();
                 break;
             case 10:
+                PriorityQueueTester();
+                break;
+            case 11:
                 TrieTester();
                 break;
             default:
@@ -300,6 +303,33 @@ public class Tester {
         Integer[] newArr = new Integer[newInOrderList.size()];
         newArr = newInOrderList.toArray(newArr);
         for(Integer i : newArr){
+            System.out.print(i + " ");
+        }
+    }
+
+    private static void HashSetTester(){
+        HashSet<Integer> set = new HashSet<>();
+        set.add(1);
+        set.add(2);
+        set.add(1);
+        set.add(3);
+        set.add(4);
+        System.out.println("Size: " + set.size());
+        for(int i : set){
+            System.out.print(i + " ");
+        }
+        System.out.println();
+        System.out.println("Removing: " + set.remove(1));
+        System.out.println("Size: " + set.size());
+        for(int i : set){
+            System.out.print(i + " ");
+        }
+        System.out.println();
+        System.out.println("Removing: " + set.remove(2));
+        System.out.println("Removing: " + set.remove(3));
+        System.out.println("Removing: " + set.remove(4));
+        System.out.println("Size: " + set.size());
+        for(int i : set){
             System.out.print(i + " ");
         }
     }
